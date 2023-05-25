@@ -3,6 +3,12 @@ module.exports = {
   content: ['./App.tsx', './app/**/*.tsx'],
   theme: {
     extend: {
+      fontFamily: {
+        title: 'robotoBold',
+        body: 'robotoRegular',
+        alt: 'baiJamjureeBold',
+      },
+
       colors: {
         gray: {
           50: '#eaeaea',
