@@ -1,4 +1,5 @@
 import cors from '@fastify/cors'
+import jwt from '@fastify/jwt'
 import 'dotenv/config'
 import fastify from 'fastify'
 import { authRoutes } from './routes/auth'
@@ -9,8 +10,12 @@ const PORT = process.env.SERVER_PORT
   : 3001
 
 const app = fastify()
+
 app.register(cors, {
   origin: true,
+})
+app.register(jwt, {
+  secret: String(process.env.JWT_SECRET),
 })
 
 app.register(authRoutes)
